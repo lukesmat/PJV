@@ -1,0 +1,10 @@
+package cz.cvut.fel.pjv;
+
+public class Start
+{
+    public static void main(String[] args)
+    {
+        Lab01 calc = new Lab01();
+        calc.homework(args);
+    }
+}
