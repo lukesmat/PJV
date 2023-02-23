@@ -1,0 +1,122 @@
+package cz.cvut.fel.pjv;
+
+import java.util.Scanner;
+import java.util.Locale;
+public class Lab01
+{
+    Scanner scan = new Scanner(System.in).useLocale(Locale.US);
+    public void homework(String[] args)
+    {
+        System.out.println("Vyber operaci (1-soucet, 2-rozdil, 3-soucin, 4-podil):");
+        int choice = scan.nextInt();
+        if ((choice >= 1) && (choice <= 4))
+        {
+            double first_number;
+            double second_number;
+            int decimal;
+            if (choice == 1)
+            {
+                System.out.println("Zadej scitanec: ");
+                first_number = scan.nextDouble();
+                System.out.println("Zadej scitanec: ");
+                second_number = scan.nextDouble();
+                System.out.println("Zadej pocet desetinnych mist: ");
+                decimal = scan.nextInt();
+
+                if (decimal < 0)
+                {
+                    System.out.println("Chyba - musi byt zadane kladne cislo!");
+                }
+                else
+                {
+                    double sum = first_number + second_number;
+                    String format = "%." + decimal + "f";
+
+                    System.out.println(String.format(Locale.US, format, first_number) + " + " +
+                            String.format(Locale.US, format, second_number) + " = " +
+                            String.format(Locale.US, format, sum));
+                }
+            }
+            else if (choice == 2)
+            {
+                System.out.println("Zadej mensenec: ");
+                first_number = scan.nextDouble();
+                System.out.println("Zadej mensitel: ");
+                second_number = scan.nextDouble();
+                System.out.println("Zadej pocet desetinnych mist: ");
+                decimal = scan.nextInt();
+
+                if (decimal < 0)
+                {
+                    System.out.println("Chyba - musi byt zadane kladne cislo!");
+                }
+                else
+                {
+                    double sub = first_number - second_number;
+                    String format = "%." + decimal + "f";
+
+                    System.out.println(String.format(Locale.US, format, first_number) + " - " +
+                            String.format(Locale.US,format, second_number) + " = " +
+                            String.format(Locale.US, format, sub));
+                }
+            }
+            else if (choice == 3)
+            {
+                System.out.println("Zadej cinitel: ");
+                first_number = scan.nextDouble();
+                System.out.println("Zadej cinitel: ");
+                second_number = scan.nextDouble();
+                System.out.println("Zadej pocet desetinnych mist: ");
+                decimal = scan.nextInt();
+
+                if (decimal < 0)
+                {
+                    System.out.println("Chyba - musi byt zadane kladne cislo!");
+                }
+                else
+                {
+                    double mul = first_number * second_number;
+                    String format = "%." + decimal + "f";
+
+                    System.out.println(String.format(Locale.US, format, first_number) + " * " +
+                            String.format(Locale.US, format, second_number) + " = " +
+                            String.format(Locale.US, format, mul));
+                }
+            }
+            else
+            {
+                System.out.println("Zadej delenec: ");
+                first_number = scan.nextDouble();
+                System.out.println("Zadej delitel: ");
+                second_number = scan.nextDouble();
+                if (second_number == 0)
+                {
+                    System.out.println("Pokus o deleni nulou!");
+                }
+                else
+                {
+                    System.out.println("Zadej pocet desetinnych mist: ");
+                    decimal = scan.nextInt();
+
+                    if (decimal < 0)
+                    {
+                        System.out.println("Chyba - musi byt zadane kladne cislo!");
+                    }
+                    else
+                    {
+                        double div = first_number / second_number;
+                        String format = "%." + decimal + "f";
+
+                        System.out.println(String.format(Locale.US, format, first_number) + " / " +
+                                String.format(Locale.US, format, second_number) + " = " +
+                                String.format(Locale.US, format, div));
+                    }
+                }
+            }
+        }
+        else
+        {
+            System.out.println("Chybna volba!");
+        }
+    }
+}
